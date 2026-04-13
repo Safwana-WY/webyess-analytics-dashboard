@@ -211,9 +211,8 @@ Chart.defaults.font.family="'Segoe UI', system-ui, sans-serif";
 const catColors={Tutorial:'pill-red',Audit:'pill-orange',Product:'pill-blue',Event:'pill-purple',Tips:'pill-green',Education:'pill-blue'};
 function fmtDur(s){return Math.floor(s/60)+'m '+String(s%60).padStart(2,'0')+'s';}
 
-fetch('data.json')
-  .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
-  .then(function(d){
+var SAMPLE={generated:'Sample data',period:{start:'2025-01-06',end:'2025-01-12',label:'6 Jan \u2013 12 Jan 2025 (sample)'},kpis:{views:342,watch_hrs:28,avg_dur_s:281,net_subs:9,top_source:'YT Search',top_source_pct:41.2},daily:{labels:['6 Jan','7 Jan','8 Jan','9 Jan','10 Jan','11 Jan','12 Jan'],views:[48,41,56,50,62,47,38],watch_mins:[234,201,274,245,304,230,186],gained:[1,0,2,1,2,1,2],lost:[0,0,0,1,0,0,0]},traffic:{labels:['YT Search','External','Suggested','Direct','Channel Pages'],views:[141,82,68,28,23]},videos:[{title:'WordPress Accessibility: Make Your Website Accessible',cat:'Tutorial',views:89,watch:462,avg:312,net:3},{title:'How to Check Color Contrast for Web Accessibility',cat:'Audit',views:72,watch:297,avg:248,net:2},{title:'What is WebYes?',cat:'Product',views:61,watch:189,avg:186,net:2},{title:'Introduction to Alt Text in Web Accessibility',cat:'Tutorial',views:32,watch:119,avg:223,net:1},{title:'WebYes at WebSummit Startup Showcase',cat:'Event',views:28,watch:192,avg:412,net:1}]};
+function renderDashboard(d,isSample){
     document.getElementById('loading-state').style.display='none';
     document.getElementById('dashboard').style.display='';
     document.getElementById('period-label').textContent=d.period.label;
@@ -258,11 +257,21 @@ fetch('data.json')
       tbody.innerHTML+='<tr><td><span class="'+rc+'">'+(i+1)+'</span></td><td>'+v.title+'</td><td><span class="pill '+pc+'">'+v.cat+'</span></td><td class="right highlight">'+v.views.toLocaleString()+'</td><td class="right">'+share+'%<div class="bar-bg"><div class="bar-fill" style="width:'+share+'%"></div></div></td><td class="right">'+v.watch.toLocaleString()+'</td><td class="right">'+fmtDur(v.avg)+'</td><td class="right '+nc+'">'+ns+'</td></tr>';
     });
 
-    document.getElementById('footer-text').textContent='WebYes YouTube Analytics \u00b7 Period: '+d.period.label+' \u00b7 Last updated: '+d.generated;
+    var suffix=isSample?' \u00b7 \u26a0\ufe0f Sample data \u2014 run youtube_update_dashboard.py to load real numbers':'';
+    document.getElementById('footer-text').textContent='WebYes YouTube Analytics \u00b7 Period: '+d.period.label+' \u00b7 Last updated: '+d.generated+suffix;
+}
+fetch('data.json')
+  .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+  .then(function(d){
+    document.getElementById('loading-state').style.display='none';
+    document.getElementById('dashboard').style.display='';
+    renderDashboard(d,false);
   })
   .catch(function(err){
-    document.getElementById('loading-state').innerHTML='<p style="color:#e74c3c;font-size:14px;">\u26a0\ufe0f Could not load analytics data.<br><small style="color:var(--muted)">Run youtube_update_dashboard.py to generate data.json, then reload.</small></p>';
-    console.error(err);
+    console.warn('data.json not found, using sample data:',err);
+    document.getElementById('loading-state').style.display='none';
+    document.getElementById('dashboard').style.display='';
+    renderDashboard(SAMPLE,true);
   });
 </script>
 </body>
