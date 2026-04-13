@@ -1,0 +1,137 @@
+{
+  "generated": "2026-04-13",
+  "period": {
+    "start": "2026-04-06",
+    "end": "2026-04-12",
+    "label": "6 Apr \u2013 12 Apr 2026"
+  },
+  "kpis": {
+    "views": 33,
+    "watch_hrs": 0.7,
+    "avg_dur_s": 76,
+    "net_subs": 0,
+    "top_source": "YT Search",
+    "top_source_pct": 45.0
+  },
+  "daily": {
+    "labels": [
+      "6 Apr",
+      "7 Apr",
+      "8 Apr",
+      "9 Apr",
+      "10 Apr",
+      "11 Apr",
+      "12 Apr"
+    ],
+    "views": [
+      4,
+      3,
+      9,
+      7,
+      8,
+      1,
+      1
+    ],
+    "watch_mins": [
+      5,
+      4,
+      12,
+      9,
+      10,
+      1,
+      1
+    ],
+    "gained": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "lost": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "traffic": {
+    "labels": [
+      "YT Search",
+      "Suggested Videos",
+      "External",
+      "Direct / Unknown",
+      "Channel Pages"
+    ],
+    "views": [
+      15,
+      8,
+      5,
+      3,
+      2
+    ]
+  },
+  "videos": [
+    {
+      "title": "How to check color contrast for web accessibility?",
+      "cat": "Tutorial",
+      "views": 13,
+      "watch": 936,
+      "avg": 72,
+      "net": 0
+    },
+    {
+      "title": "Autocomplete: The Accessibility Problem Nobody Talks About",
+      "cat": "Tutorial",
+      "views": 11,
+      "watch": 231,
+      "avg": 21,
+      "net": 0
+    },
+    {
+      "title": "What is WebYes?",
+      "cat": "Product",
+      "views": 3,
+      "watch": 150,
+      "avg": 50,
+      "net": 0
+    },
+    {
+      "title": "WordPress Accessibility: How to make your website more accessible",
+      "cat": "Tutorial",
+      "views": 2,
+      "watch": 42,
+      "avg": 21,
+      "net": 0
+    },
+    {
+      "title": "Introduction to Alt Text in Web Accessibility",
+      "cat": "Tutorial",
+      "views": 2,
+      "watch": 14,
+      "avg": 7,
+      "net": 0
+    },
+    {
+      "title": "What Is Focus Order? A Simple Guide for Better Web Accessibility",
+      "cat": "Tutorial",
+      "views": 1,
+      "watch": 124,
+      "avg": 124,
+      "net": 0
+    },
+    {
+      "title": "How To Write Alt Text?",
+      "cat": "Tutorial",
+      "views": 1,
+      "watch": 852,
+      "avg": 852,
+      "net": 0
+    }
+  ]
+}
