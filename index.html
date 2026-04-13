@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WebYes â YouTube Analytics Dashboard</title>
+  <title>WebYes &#8211; YouTube Analytics Dashboard</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
     :root {
@@ -27,7 +27,7 @@
       padding: 24px;
     }
 
-    /* ââ Header ââ */
+    /* &#9472;&#9472; Header &#9472;&#9472; */
     .header {
       display: flex;
       align-items: center;
@@ -56,7 +56,7 @@
     }
     .date-badge span { color: var(--text); font-weight: 600; }
 
-    /* ââ KPI Cards ââ */
+    /* &#9472;&#9472; KPI Cards &#9472;&#9472; */
     .kpi-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -96,7 +96,7 @@
     .kpi-badge.up   { background: rgba(46,204,113,.15); color: var(--green); }
     .kpi-badge.down { background: rgba(231,76,60,.15);  color: #e74c3c; }
 
-    /* ââ Section layout ââ */
+    /* &#9472;&#9472; Section layout &#9472;&#9472; */
     .section-title {
       font-size: 15px;
       font-weight: 600;
@@ -112,7 +112,7 @@
       .row-2, .row-2b { grid-template-columns: 1fr; }
     }
 
-    /* ââ Chart cards ââ */
+    /* &#9472;&#9472; Chart cards &#9472;&#9472; */
     .chart-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -122,7 +122,7 @@
     .chart-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 18px; color: var(--text); }
     .chart-wrap { position: relative; }
 
-    /* ââ Table ââ */
+    /* &#9472;&#9472; Table &#9472;&#9472; */
     .table-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -184,7 +184,7 @@
     .pill-purple { background: rgba(155,89,182,.12);  color: var(--purple); }
     .pill-orange { background: rgba(230,126,34,.12);  color: var(--orange); }
 
-    /* ââ Footer ââ */
+    /* &#9472;&#9472; Footer &#9472;&#9472; */
     footer {
       margin-top: 32px;
       text-align: center;
@@ -195,7 +195,7 @@
 </head>
 <body>
 
-<!-- ââ Header ââ -->
+<!-- &#9472;&#9472; Header &#9472;&#9472; -->
 <div class="header">
   <div class="header-left">
     <div class="yt-logo">
@@ -206,65 +206,65 @@
       <div class="channel-sub">YouTube Analytics Dashboard</div>
     </div>
   </div>
-  <div class="date-badge">Period: <span>1 Jan 2025 â 31 Jan 2025</span></div>
+  <div class="date-badge">Period: <span>1 Jan 2025 &#8594; 31 Jan 2025</span></div>
 </div>
 
-<!-- ââ KPI Cards ââ -->
+<!-- &#9472;&#9472; KPI Cards &#9472;&#9472; -->
 <div class="kpi-grid">
   <div class="kpi-card red">
     <div class="kpi-label">Total Views</div>
-    <div class="kpi-value">41,252</div>
-    <div class="kpi-badge up">â² 12.4% vs prev</div>
+    <div class="kpi-value">342</div>
+    <div class="kpi-badge up">&#9650; 14.8% vs prev</div>
   </div>
   <div class="kpi-card blue">
     <div class="kpi-label">Watch Time</div>
-    <div class="kpi-value">2,891<span style="font-size:16px;font-weight:400;color:var(--muted)"> hrs</span></div>
-    <div class="kpi-badge up">â² 8.7% vs prev</div>
+    <div class="kpi-value">28<span style="font-size:16px;font-weight:400;color:var(--muted)"> hrs</span></div>
+    <div class="kpi-badge up">&#9650; 11.2% vs prev</div>
   </div>
   <div class="kpi-card green">
     <div class="kpi-label">Net Subscribers</div>
-    <div class="kpi-value">+1,024</div>
-    <div class="kpi-badge up">â² 18.2% vs prev</div>
+    <div class="kpi-value">+9</div>
+    <div class="kpi-badge up">&#9650; 12.5% vs prev</div>
   </div>
   <div class="kpi-card purple">
     <div class="kpi-label">Avg View Duration</div>
-    <div class="kpi-value">4m 12s</div>
+    <div class="kpi-value">4m 41s</div>
     <div class="kpi-sub">Across all content</div>
   </div>
   <div class="kpi-card orange">
     <div class="kpi-label">Top Traffic Source</div>
     <div class="kpi-value" style="font-size:18px">YT Search</div>
-    <div class="kpi-sub">33.6% of total views</div>
+    <div class="kpi-sub">41.2% of total views</div>
   </div>
 </div>
 
-<!-- ââ Row 1: Views chart + Traffic Doughnut ââ -->
+<!-- &#9472;&#9472; Row 1: Views chart + Traffic Doughnut &#9472;&#9472; -->
 <div class="row row-2">
   <div class="chart-card">
-    <h3>ð Daily Views &amp; Watch Time</h3>
+    <h3>&#128200; Daily Views &amp; Watch Time</h3>
     <div class="chart-wrap"><canvas id="viewsChart" height="90"></canvas></div>
   </div>
   <div class="chart-card">
-    <h3>ð Traffic Sources</h3>
+    <h3>&#128256; Traffic Sources</h3>
     <div class="chart-wrap"><canvas id="trafficChart" height="180"></canvas></div>
   </div>
 </div>
 
-<!-- ââ Row 2: Subscriber chart + Avg Duration ââ -->
+<!-- &#9472;&#9472; Row 2: Subscriber chart + Avg Duration &#9472;&#9472; -->
 <div class="row row-2b">
   <div class="chart-card">
-    <h3>ð¥ Daily Subscriber Gains &amp; Losses</h3>
+    <h3>&#128101; Daily Subscriber Gains &amp; Losses</h3>
     <div class="chart-wrap"><canvas id="subChart" height="120"></canvas></div>
   </div>
   <div class="chart-card">
-    <h3>â± Avg View Duration by Top Video</h3>
+    <h3>&#9201; Avg View Duration by Top Video</h3>
     <div class="chart-wrap"><canvas id="durationChart" height="120"></canvas></div>
   </div>
 </div>
 
-<!-- ââ Per-Video Breakdown Table ââ -->
+<!-- &#9472;&#9472; Per-Video Breakdown Table &#9472;&#9472; -->
 <div class="table-card">
-  <h3>ð¬ Per-Video Breakdown â Top 10 Videos by Views</h3>
+  <h3>&#127916; Per-Video Breakdown &#8212; Top 10 Videos by Views</h3>
   <table>
     <thead>
       <tr>
@@ -282,40 +282,39 @@
   </table>
 </div>
 
-<footer>WebYes</footer>
+<footer>WebYes YouTube Analytics &#183; Data period: January 2025 &#183; Sample data &#8212; connect Python script for live figures</footer>
 
 <script>
-
+// &#9472;&#9472; Data &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
 const days = Array.from({length:31},(_,i)=>{
   const d=new Date(2025,0,i+1);
   return `${d.getDate()} Jan`;
 });
 
-const views = [1266,1092,1313,1943,1627,1064,972,1271,1065,1348,1885,1572,1419,1004,1366,1347,1217,1598,1901,1373,1298,1069,998,1008,1771,1592,1088,1271,1042,1038,1434];
-const watchMins = [4484,4236,6105,7087,5776,4638,3730,5625,4794,4732,8834,5917,5778,3679,6182,6385,6272,7092,8652,6153,4644,4267,3887,4004,7296,6139,5540,5764,4938,4302,6579];
-const gained = [38,43,21,52,41,21,31,23,44,33,53,21,25,58,55,54,43,32,53,36,27,25,37,61,24,54,30,24,63,54,57];
-const lost   = [4,12,3,3,11,10,2,8,3,3,8,11,5,12,2,11,2,2,4,8,10,11,10,4,11,12,7,10,3,2,5];
+const views = [8,12,9,14,11,7,6,13,10,15,18,11,9,7,12,16,14,9,11,13,8,7,10,12,15,11,9,8,13,10,14];
+const watchMins = [39,59,44,69,54,34,29,64,49,74,88,54,44,34,59,78,69,44,54,64,39,34,49,59,74,54,44,39,64,49,69];
+const gained = [0,1,0,1,1,0,0,1,0,1,2,0,0,0,1,1,1,0,1,1,0,0,0,1,1,0,0,0,1,0,1];
+const lost   = [0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,1,0,1,0,0,1];
 
-const trafficLabels = ['YT Search','Suggested','Homepage','External','Direct','Subscriber','Playlists','End Screens','Channel','Notifications'];
-const trafficViews  = [38200,29500,18700,9200,5800,4100,3500,2100,1600,920];
+const trafficLabels = ['YT Search','External','Suggested','Direct','Channel Pages','Browse','End Screens','Subscribers','Playlists','Notifications'];
+const trafficViews  = [141,82,68,28,9,7,4,2,1,0];
 
 const videos = [
-  {title:'WebYes Tutorial: Build a Landing Page in 10 Min', cat:'Tutorial',  views:14820, watch:10250, avg:198, net:+3},
-  {title:'How We Grew to 10K Subscribers â Full Breakdown',  cat:'Growth',   views:11340, watch:8900,  avg:212, net:+3},
-  {title:'Top 5 SEO Mistakes You\'re Making Right Now',       cat:'SEO',      views:9870,  watch:7100,  avg:185, net:+3},
-  {title:'React vs Vue in 2025 â Which Should You Choose?',   cat:'Dev',      views:8450,  watch:6300,  avg:172, net:+3},
-  {title:'WebYes Live Q&A â January Edition',                 cat:'Live',     views:7230,  watch:9800,  avg:342, net:+3},
-  {title:'Behind the Scenes: Our Content Workflow',           cat:'BTS',      views:6110,  watch:4400,  avg:156, net:+3},
-  {title:'Email Marketing Tips That Actually Work',           cat:'Marketing', views:5480,  watch:3950,  avg:148, net:+3},
-  {title:'Free Tools Every Web Designer Should Know',         cat:'Tools',    views:4920,  watch:3500,  avg:139, net:+3},
-  {title:'How to Write Copy That Converts',                   cat:'Marketing', views:4210,  watch:3100,  avg:132, net:+3},
-  {title:'Quick Tip: Speed Up Your Website in 5 Steps',       cat:'Tips',     views:3760,  watch:2650,  avg:118, net:+3},
+  {title:'WordPress Accessibility: Make Your Website Accessible',  cat:'Tutorial',  views:89,  watch:462, avg:312, net:+3},
+  {title:'How to Check Color Contrast for Web Accessibility',       cat:'Audit',     views:72,  watch:297, avg:248, net:+2},
+  {title:'What is WebYes?',                                         cat:'Product',   views:61,  watch:189, avg:186, net:+2},
+  {title:'Introduction to Alt Text in Web Accessibility',           cat:'Tutorial',  views:32,  watch:119, avg:223, net:+1},
+  {title:'WebYes at WebSummit Startup Showcase',                    cat:'Event',     views:28,  watch:192, avg:412, net:+1},
+  {title:'Screen Reader Testing for Web Developers',                cat:'Tutorial',  views:22,  watch:130, avg:356, net: 0},
+  {title:'Keyboard Navigation Accessibility Tips',                  cat:'Tips',      views:18,  watch:82,  avg:274, net: 0},
+  {title:'WebYes Product Demo & Tutorial',                          cat:'Product',   views:14,  watch:91,  avg:389, net:+1},
+  {title:'Understanding WCAG 2.1 Guidelines',                       cat:'Education', views:11,  watch:55,  avg:298, net: 0},
+  {title:'How to Run a Full Website Accessibility Audit',           cat:'Audit',     views:9,   watch:51,  avg:342, net:-1},
 ];
 
 const catColors = {
-  Tutorial:'pill-red', Growth:'pill-green', SEO:'pill-orange',
-  Dev:'pill-blue', Live:'pill-purple', BTS:'pill-orange',
-  Marketing:'pill-blue', Tools:'pill-green', Tips:'pill-red',
+  Tutorial:'pill-red', Audit:'pill-orange', Product:'pill-blue',
+  Event:'pill-purple', Tips:'pill-green', Education:'pill-blue',
 };
 
 const GRID  = 'rgba(255,255,255,0.05)';
@@ -323,6 +322,7 @@ const MUTED = '#888';
 Chart.defaults.color = MUTED;
 Chart.defaults.font.family = "'Segoe UI', system-ui, sans-serif";
 
+// &#9472;&#9472; Views & Watch Time Chart &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
 new Chart(document.getElementById('viewsChart'), {
   type: 'line',
   data: {
@@ -352,64 +352,112 @@ new Chart(document.getElementById('viewsChart'), {
       },
     ]
   },
-  options:{
-    responsive:true,
-    interaction:{ mode:'index', intersect:false },
-    plugins:{ legend:{ labels:{ color:'#aaa', boxWidth:12 } } },
+  options: {
+    responsive: true,
+    interaction: { mode:'index', intersect:false },
+    plugins: { legend:{ labels:{ color:'#aaa', boxWidth:12 } } },
     scales: {
-      x:{ grid:{ color:GRID }, ticks:{ maxTicksLimit:10, color:MUTED } },
-      y: { grid:{ color:GRID }, ticks:{ color:MUTED }, position:'|eft',  title:{ display:true, text:'Views', color:MUTED } },
-      y1:{ grid:{ drawOnChartArea:false }, ticks:{ color:MUTED }, position:'right', title:{ display:true, text:'Watch (min)', color:MUTED } },
+      x: { grid:{ color:GRID }, ticks:{ maxTicksLimit:10, color:MUTED } },
+      y:  { grid:{ color:GRID }, ticks:{ color:MUTED }, position:'left',  title:{ display:true, text:'Views', color:MUTED } },
+      y1: { grid:{ drawOnChartArea:false }, ticks:{ color:MUTED }, position:'right', title:{ display:true, text:'Watch (min)', color:MUTED } },
     }
   }
 });
 
+// &#9472;&#9472; Traffic Doughnut &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
 new Chart(document.getElementById('trafficChart'), {
   type: 'doughnut',
-  data:{
+  data: {
     labels: trafficLabels,
     datasets:[{
       data: trafficViews,
-      backgroundColor:['#FF0000','#3498db','#2ecc71','#e67e22','#9b59b6','#1abc9c','#e74c3c','#f39c12','#16a085','#8e44ad'],
-      borderWidth:0, hoverOffset:8,
+      backgroundColor:[
+        '#FF0000','#3498db','#2ecc71','#e67e22','#9b59b6',
+        '#1abc9c','#e74c3c','#f39c12','#16a085','#8e44ad'
+      ],
+      borderWidth: 0,
+      hoverOffset: 8,
     }]
   },
-  options:{ responsive:true, cutout:'68%', plugins:{ legend:{ position: 'bottom', labels:{ color:'#aaa', boxWidth:11, padding:10, font:{size:11} } } } }
+  options: {
+    responsive:true,
+    cutout:'68%',
+    plugins:{
+      legend:{ position:'bottom', labels:{ color:'#aaa', boxWidth:11, padding:10, font:{size:11} } }
+    }
+  }
 });
 
+// &#9472;&#9472; Subscriber Bar Chart &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
 new Chart(document.getElementById('subChart'), {
   type: 'bar',
-  data:{ labels:days, datasets:[
-    { label:'Gained', data:gained, backgroundColor:'rgba(46,204,113,0.75)', borderRadius:3, borderSkipped:false },
-    { label:'Lost', data:lost.map(v=>-v), backgroundColor:'rgba(231,76,60,0.6)', borderRadius:3, borderSkipped:false },
-  ]},
-  options:{ responsive:true, interaction:{ mode:'index', intersect:false },
+  data: {
+    labels: days,
+    datasets:[
+      { label:'Gained', data:gained, backgroundColor:'rgba(46,204,113,0.75)', borderRadius:3, borderSkipped:false },
+      { label:'Lost',   data:lost.map(v=>-v), backgroundColor:'rgba(231,76,60,0.6)', borderRadius:3, borderSkipped:false },
+    ]
+  },
+  options:{
+    responsive:true,
+    interaction:{ mode:'index', intersect:false },
     plugins:{ legend:{ labels:{ color:'#aaa', boxWidth:12 } } },
-    scales:{ x:{ stacked:true, grid:{ color:GRID }, ticks:{ maxTicksLimit:10, color:MUTED } }, y:
-{ stacked:true, grid:{ color:GRID }, ticks:{ color:MUTED } } } }
+    scales:{
+      x:{ stacked:true, grid:{ color:GRID }, ticks:{ maxTicksLimit:10, color:MUTED } },
+      y:{ stacked:true, grid:{ color:GRID }, ticks:{ color:MUTED } },
+    }
+  }
 });
 
+// &#9472;&#9472; Avg Duration Horizontal Bar &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
 new Chart(document.getElementById('durationChart'), {
   type: 'bar',
-  data:{ labels: videos.map(v => v.title.length > 28 ? v.title.slice(0,25)+'â¦': v.title),
-    datasets:[{ label:'Avg Duration (s)', data: videos.map(v=>v.avg),
+  data: {
+    labels: videos.map(v => v.title.length > 28 ? v.title.slice(0,25)+'&#8230;' : v.title),
+    datasets:[{
+      label:'Avg Duration (s)',
+      data: videos.map(v=>v.avg),
       backgroundColor: videos.map((_,i)=> i===4 ? 'rgba(155,89,182,0.8)' : 'rgba(52,152,219,0.65)'),
-      borderRadius:4, borderSkipped:false }]
-    },
-  options:{ indexAxis:'y', responsive:true, plugins:{ legend:{ display:false } },
-    scales:{ x:{ grid:{ color:GRID }, ticks:{ color:MUTED } },
-      y:{ grid:{ color:GRID }, ticks:{ color:MUTED, font:{size:11} } } } }
+      borderRadius: 4,
+      borderSkipped: false,
+    }]
+  },
+  options:{
+    indexAxis:'y',
+    responsive:true,
+    plugins:{ legend:{ display:false } },
+    scales:{
+      x:{ grid:{ color:GRID }, ticks:{ color:MUTED } },
+      y:{ grid:{ color:GRID }, ticks:{ color:MUTED, font:{size:11} } },
+    }
+  }
 });
 
+// &#9472;&#9472; Per-Video Table &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
 const totalV = videos.reduce((s,v)=>s+v.views,0);
 const tbody = document.getElementById('videoTable');
+
 videos.forEach((v,i) => {
   const share = (v.views/totalV*100).toFixed(1);
   const durM = Math.floor(v.avg/60), durS = v.avg%60;
   const netClass = v.net >= 0 ? 'net-positive' : 'net-negative';
   const netStr = (v.net >= 0 ? '+' : '') + v.net;
   const rankClass = i < 3 ? 'rank top' : 'rank';
-  tbody.innerHTML += `<tr><td><span class="${rankClass}">${i+1}</span></td><td>${v.title}</td><td><span class="pill ${catColors[v.cat]||'pill-blue'}">${v.cat}</span></td><td class="right highlight">${v.views.toLocaleString()}</td><td class="right">${share}%<div class="bar-bg"><div class="bar-fill" style="width:${share}%"></div></div></td><td class="right">${v.watch.toLocaleString()}</td><td class="right">${durM}m ${durS}s</td><td class="right ${netClass}">${netStr}</td></tr>`;
+
+  tbody.innerHTML += `
+    <tr>
+      <td><span class="${rankClass}">${i+1}</span></td>
+      <td>${v.title}</td>
+      <td><span class="pill ${catColors[v.cat]||'pill-blue'}">${v.cat}</span></td>
+      <td class="right highlight">${v.views.toLocaleString()}</td>
+      <td class="right">
+        ${share}%
+        <div class="bar-bg"><div class="bar-fill" style="width:${share}%"></div></div>
+      </td>
+      <td class="right">${v.watch.toLocaleString()}</td>
+      <td class="right">${durM}m ${durS}s</td>
+      <td class="right ${netClass}">${netStr}</td>
+    </tr>`;
 });
 </script>
 </body>
