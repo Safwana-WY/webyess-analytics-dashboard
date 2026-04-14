@@ -3,7 +3,7 @@
   "period": {
     "start": "2026-04-06",
     "end": "2026-04-12",
-    "label": "6 Apr – 12 Apr 2026"
+    "label": "6 Apr â 12 Apr 2026"
   },
   "kpis": {
     "views": 32,
@@ -128,5 +128,15 @@
       "avg": 852,
       "net": 0
     }
-  ]
+  ],
+  "prev_kpis": {
+    "views": 34,
+    "watch_hrs": 0.8,
+    "avg_dur_s": 86,
+    "net_subs": 0,
+    "top_source": "External",
+    "top_source_pct": 38.2,
+    "period_start": "2026-03-30",
+    "period_end": "2026-04-05"
+  }
 }
