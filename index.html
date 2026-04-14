@@ -169,12 +169,13 @@ function fmtDur(s) {
   return m ? `${m}m ${sec}s` : `${sec}s`;
 }
 
-function delta(curr, prev, higherIsBetter = true) {
+function delta(curr, prev, higherIsBetter = true, decimals = 0) {
   if (prev === undefined || prev === null) return null;
-  const diff = curr - prev;
-  const pct  = prev !== 0 ? Math.round(diff / Math.abs(prev) * 1000) / 10 : null;
-  const up   = diff > 0;
-  const flat = diff === 0;
+  const rawDiff = curr - prev;
+  const diff = decimals > 0 ? Math.round(rawDiff * Math.pow(10, decimals)) / Math.pow(10, decimals) : Math.round(rawDiff);
+  const pct  = prev !== 0 ? Math.round(rawDiff / Math.abs(prev) * 1000) / 10 : null;
+  const up   = rawDiff > 0;
+  const flat = rawDiff === 0;
   const good = higherIsBetter ? up : !up;
   const cls  = flat ? 'flat' : (good ? 'up' : 'down');
   const arrow = flat ? '→' : (up ? '▲' : '▼');
@@ -217,11 +218,11 @@ async function loadDashboard() {
     ? `<div class="kpi-prev" style="color:#94A3B8;font-size:.7rem;margin-top:2px">vs ${p.period_start ? p.period_start.slice(5).replace('-','/') : 'prev week'} – ${p.period_end ? p.period_end.slice(5).replace('-','/') : ''}</div>`
     : '';
 
-  const dViews = hasPrev ? delta(k.views, p.views) : null;
-  const dHrs   = hasPrev ? delta(k.watch_hrs, p.watch_hrs) : null;
-  const dAvg   = hasPrev ? delta(k.avg_dur_s, p.avg_dur_s) : null;
-  const dSubs  = hasPrev ? delta(k.net_subs, p.net_subs) : null;
-  const dPct   = hasPrev ? delta(k.top_source_pct, p.top_source_pct) : null;
+  const dViews = hasPrev ? delta(k.views, p.views, true, 0) : null;
+  const dHrs   = hasPrev ? delta(k.watch_hrs, p.watch_hrs, true, 1) : null;
+  const dAvg   = hasPrev ? delta(k.avg_dur_s, p.avg_dur_s, true, 0) : null;
+  const dSubs  = hasPrev ? delta(k.net_subs, p.net_subs, true, 0) : null;
+  const dPct   = hasPrev ? delta(k.top_source_pct, p.top_source_pct, true, 1) : null;
 
   document.getElementById('kpiGrid').innerHTML = `
     <div class="kpi-card">
