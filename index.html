@@ -92,6 +92,25 @@
   .rank.top { background: linear-gradient(135deg,#F59E0B,#EF4444); }
   .avg-dur { color: var(--sub); font-size: .8rem; }
 
+  /* ── Search keywords ── */
+  .keywords-card {
+    background: var(--card); border-radius: var(--radius);
+    border: 1px solid var(--border); box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    padding: 22px 24px;
+  }
+  .keywords-card h3 { font-size: .85rem; font-weight: 700; color: var(--sub); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 18px; }
+  .keywords-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .keyword-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #EFF6FF; border: 1px solid #BFDBFE;
+    border-radius: 24px; padding: 6px 14px;
+    font-size: .84rem; color: #1E40AF; font-weight: 500;
+    transition: background .15s;
+  }
+  .keyword-pill:hover { background: #DBEAFE; }
+  .keyword-pill .kw-rank { font-size: .68rem; font-weight: 800; color: #93C5FD; }
+  .keyword-pill .kw-views { font-size: .72rem; color: #60A5FA; font-weight: 600; margin-left: 2px; }
+
   /* ── Footer ── */
   footer { text-align: center; color: var(--neutral); font-size: .75rem; padding: 20px; }
   .no-data { color: var(--neutral); font-style: italic; font-size: .9rem; padding: 20px; }
@@ -156,6 +175,13 @@
       <tbody id="videosBody"><tr><td colspan="5" class="no-data">Loading…</td></tr></tbody>
     </table>
   </div>
+
+  <div class="section-title" style="margin-top:32px">Top YouTube search keywords</div>
+  <div class="keywords-card">
+    <div class="keywords-grid" id="keywordsGrid">
+      <span class="no-data">Loading…</span>
+    </div>
+  </div>
 </main>
 
 <footer id="footer">—</footer>
@@ -215,7 +241,7 @@ async function loadDashboard() {
 
   // KPI Cards
   const prevPeriodStr = hasPrev
-    ? `<div class="kpi-prev" style="color:#94A3B8;font-size:.7rem;margin-top:2px">vs ${p.period_start ? p.period_start.slice(5).replace('-','/') : 'prev week'} – ${p.period_end ? p.period_end.slice(5).replace('-','/') : ''}</div>`
+    ? `<div class="kpi-prev" style="color:#94A3B8;font-size:.7rem;margin-top:2px">vs ${p.period_start ? p.period_start.slice(5).replace('-','/') : 'prev week'} - ${p.period_end ? p.period_end.slice(5).replace('-','/') : ''}</div>`
     : '';
 
   const dViews = hasPrev ? delta(k.views, p.views, true, 0) : null;
@@ -320,6 +346,21 @@ async function loadDashboard() {
         <td style="color:${(v.net||0)>=0?'var(--green)':'var(--red)'}">${(v.net||0)>=0?'+':''}${v.net||0}</td>
       </tr>
     `).join('');
+  }
+
+  // Search keywords
+  const keywords = data.search_terms || [];
+  const kwGrid = document.getElementById('keywordsGrid');
+  if (!keywords.length) {
+    kwGrid.innerHTML = '<span class="no-data">No search keyword data available yet.</span>';
+  } else {
+    kwGrid.innerHTML = keywords.map((kw, i) =>
+      `<div class="keyword-pill">
+        <span class="kw-rank">#${i+1}</span>
+        <span>${kw.term}</span>
+        <span class="kw-views">${kw.views} view${kw.views !== 1 ? 's' : ''}</span>
+      </div>`
+    ).join('');
   }
 
   // Footer
