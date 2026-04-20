@@ -1,44 +1,48 @@
 {
-  "generated": "2026-04-14",
+  "generated": "2026-04-20",
   "period": {
-    "start": "2026-04-06",
-    "end": "2026-04-12",
-    "label": "6 Apr Ã¢ÂÂ 12 Apr 2026"
+    "start": "2026-04-13",
+    "end": "2026-04-19",
+    "label": "13 Apr – 19 Apr 2026"
   },
   "kpis": {
-    "views": 32,
+    "views": 25,
     "watch_hrs": 0.6,
-    "avg_dur_s": 69,
+    "avg_dur_s": 82,
     "net_subs": 0,
     "top_source": "YT Search",
-    "top_source_pct": 37.5
+    "top_source_pct": 44
   },
   "daily": {
     "labels": [
-      "6 Apr",
-      "7 Apr",
-      "8 Apr",
-      "9 Apr",
-      "10 Apr",
-      "11 Apr"
+      "Mon 13",
+      "Tue 14",
+      "Wed 15",
+      "Thu 16",
+      "Fri 17",
+      "Sat 18",
+      "Sun 19"
     ],
     "views": [
       4,
-      4,
-      9,
-      7,
+      3,
       8,
+      3,
+      7,
+      0,
       0
     ],
     "watch_mins": [
-      7,
+      6,
+      6,
       4,
-      5,
-      16,
-      4,
+      9,
+      8,
+      0,
       0
     ],
     "gained": [
+      0,
       0,
       0,
       0,
@@ -52,92 +56,64 @@
       0,
       0,
       0,
+      0,
       0
     ]
   },
   "traffic": {
     "labels": [
       "YT Search",
-      "Subscribers",
-      "External",
       "Direct / Other",
+      "External",
       "Channel Page"
     ],
     "views": [
-      12,
-      7,
-      6,
+      11,
+      8,
       5,
-      2
+      1
     ]
   },
   "videos": [
     {
-      "title": "How to check color contrast for web accessibility?",
-      "cat": "Video",
-      "views": 12,
-      "watch": 13,
-      "avg": 68,
-      "net": 0
-    },
-    {
-      "title": "Autocomplete: The Accessibility Problem Nobody Talks About",
-      "cat": "Video",
-      "views": 11,
-      "watch": 3,
-      "avg": 21,
-      "net": 0
-    },
-    {
-      "title": "What is WebYes?",
-      "cat": "Video",
-      "views": 3,
-      "watch": 2,
-      "avg": 50,
-      "net": 0
-    },
-    {
       "title": "WordPress Accessibility: How to make your website more accessible",
       "cat": "Video",
-      "views": 2,
-      "watch": 0,
-      "avg": 21,
+      "views": 11,
+      "watch": 18,
+      "avg": 102,
+      "net": 0
+    },
+    {
+      "title": "How to check color contrast for web accessibility?",
+      "cat": "Video",
+      "views": 6,
+      "watch": 7,
+      "avg": 76,
       "net": 0
     },
     {
       "title": "Introduction to Alt Text in Web Accessibility",
       "cat": "Video",
-      "views": 2,
-      "watch": 0,
-      "avg": 7,
+      "views": 5,
+      "watch": 1,
+      "avg": 22,
       "net": 0
     },
     {
       "title": "What Is Focus Order? A Simple Guide for Better Web Accessibility",
       "cat": "Video",
-      "views": 1,
-      "watch": 2,
-      "avg": 124,
+      "views": 2,
+      "watch": 5,
+      "avg": 154,
       "net": 0
     },
     {
-      "title": "How To Write Alt Text ?",
+      "title": "Get Started With WebYes Accessibility",
       "cat": "Video",
       "views": 1,
-      "watch": 14,
-      "avg": 852,
+      "watch": 0,
+      "avg": 47,
       "net": 0
     }
-  ],
-  "prev_kpis": {
-    "views": 34,
-    "watch_hrs": 0.8,
-    "avg_dur_s": 86,
-    "net_subs": 0,
-    "top_source": "External",
-    "top_source_pct": 38.2,
-    "period_start": "2026-03-30",
-    "period_end": "2026-04-05"
-  },
-  "search_terms": []
+  ]
 }
